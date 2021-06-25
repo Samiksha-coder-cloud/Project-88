@@ -6,13 +6,8 @@ var ball_x = 0;
 var hole_y = 400;
 var hole_x = 800;
 
-var ball_width = 30;
-var ball_height = 30;
-var hole_width = 30;
-var hole_height = 30;
-
-var hole_object = "";
-var ball_object = "";
+var block_image_width = 10;
+var block_image_height = 10;
 
 function load_img(){
 	// write code to Upload golf image on the canvas
@@ -53,7 +48,7 @@ function my_keydown(e) {
 
 	if ((ball_x == hole_x) && ball_y == hole_y) {
 		canvas.remove(ball_object);
-		document.getElementById("goal").innerHTML = "You Have Hit The Goal !!!";
+		document.getElementById("hd3").innerHTML = "You Have Hit The Goal !!!";
 		document.getElementById("myCanvas").style.borderColor="red";
 	}
 	{
@@ -84,9 +79,9 @@ function my_keydown(e) {
 function up()
 	{
 		if(ball_y >= 0)
-		{   ball_y = ball_y - ball_width;
+		{   ball_y = ball_y - block_image_height;
 			console.log("Ball x =" + ball_x + "Ball y" + ball_y);
-			console.log("Ball height" + ball_height + "Ball width" + ball_width);
+			console.log("Ball height" + ball_image_height + "Ball width" + ball_image_width);
 			canvas.remove(ball_object);
 			new_image();
 		}
@@ -96,9 +91,9 @@ function up()
 	function down()
 	{
 		if(ball_y <= 450)
-		{   ball_y = ball_y + ball_width;
+		{   ball_y = ball_y + 10;
 			console.log("Ball x =" + ball_x + "Ball y" + ball_y);
-			console.log("Ball height" + ball_height + "Ball width" + ball_width);
+			console.log("Ball height" + ball_image_height + "Ball width" + ball_image_width);
 			canvas.remove(ball_object);
 			new_image();
 		}
@@ -108,9 +103,9 @@ function up()
 	function left()
 	{
 		if(ball_x >= 0)
-		{   ball_x = ball_x - ball_width;
+		{   ball_x = ball_x - block_image_width;
 			console.log("Ball x =" + ball_x + "Ball y =" + ball_y);
-			console.log("Ball height =" + ball_height + "Ball width =" + ball_width);
+			console.log("Ball height =" + ball_image_height + "Ball width =" + ball_image_width);
 			canvas.remove(ball_object);
 			new_image();
 		}
@@ -121,9 +116,9 @@ function up()
 	{
 		if(ball_x <= 950)
 		{
-			ball_x = ball_x + ball_width;
+			ball_x = ball_x + block_image_width;
 			console.log("Ball x =" + ball_x + "Ball y =" + ball_y);
-			console.log("Ball height =" + ball_height + "Ball width =" + ball_width);
+			console.log("Ball height =" + ball_image_height + "Ball width =" + ball_image_width);
 			canvas.remove(ball_object);
 			new_image();
 			
